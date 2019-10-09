@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Test work</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +16,7 @@
 			</span>
 			<article class="content_body">
 				<section class="content_body_product">
-					<a href="">
+					<a href="/home1">
 						<span class="content_body_product_img">
 							<img src="img/Image1.svg" alt="home">
 							<div class="content_body_product_img_text">
@@ -63,63 +64,12 @@
 					</a>
 				</section>
 			</article>
-<!-- 			<div id="dots"></div>
-			<span class="content_body" id="more">
-					<section class="content_body_product" >
-						<a href="">
-							<span class="content_body_product_img">
-								<img src="img/Image3.svg" alt="home">
-								<div class="content_body_product_img_text support">
-									<p>Restaurant & Support available</p>
-								</div>
-							</span>
-							<div class="content_body_product_text">
-								<h3 class="content_body_product_title">Grove Court</h3>
-								<p>19-23 Cambridge Road, Southport</p>
-								<p>New Properties for Sale from <b>£214,999</b></p>
-								<p class="content_body_product_text_small">Shared Ownership Available</p>
-							</div>
-						</a>
-					</section>
-					<section class="content_body_product" >
-						<a href="">
-							<span class="content_body_product_img">
-								<img src="img/Image3.svg" alt="home">
-								<div class="content_body_product_img_text support">
-									<p>Restaurant & Support available</p>
-								</div>
-							</span>
-							<div class="content_body_product_text">
-								<h3 class="content_body_product_title">Grove Court</h3>
-								<p>19-23 Cambridge Road, Southport</p>
-								<p>New Properties for Sale from <b>£214,999</b></p>
-								<p class="content_body_product_text_small">Shared Ownership Available</p>
-							</div>
-						</a>
-					</section>
-					<section class="content_body_product" >
-						<a href="">
-							<span class="content_body_product_img">
-								<img src="img/Image3.svg" alt="home">
-								<div class="content_body_product_img_text support">
-									<p>Restaurant & Support available</p>
-								</div>
-							</span>
-							<div class="content_body_product_text">
-								<h3 class="content_body_product_title">Grove Court</h3>
-								<p>19-23 Cambridge Road, Southport</p>
-								<p>New Properties for Sale from <b>£214,999</b></p>
-								<p class="content_body_product_text_small">Shared Ownership Available</p>
-							</div>
-						</a>
-					</section>
-			</span> -->
 			<span class="btn_more">
-				<button id="btn_showMore" onclick="lazyload.load()">See more <img src="img/Chevron.svg" alt="icon"></button>
+				<button id="btn_showMore" onclick="showMore.load()">See more <img class="showMore_img"src="img/Chevron.svg" alt="icon"></button>
+				<div id="loading">           
+					Loading
+            	</div>
 			</span>
-			<div id="loading-div">
-                loading more items
-            </div>
 		</span>
 	</main>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
