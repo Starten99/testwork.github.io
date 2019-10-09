@@ -1,15 +1,15 @@
-var lazyload = lazyload || {};
+var showMore = showMore || {};
 
-(function($, lazyload) {
+(function($, showMore) {
 
     "use strict";
 
     var page = 2,
         buttonId = "#btn_showMore",
-        loadingId = "#loading-div",
+        loadingId = "#loading",
         container = ".content_body";
 
-    lazyload.load = function() {
+    showMore.load = function() {
 
         var url = "./" + page + ".html";
 
@@ -42,4 +42,4 @@ var lazyload = lazyload || {};
         page += 1;
     };
 
-})(jQuery, lazyload);
+})(jQuery, showMore);
