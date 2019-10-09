@@ -6,28 +6,28 @@ var showMore = showMore || {};
 
     var page = 2,
         buttonId = "#btn_showMore",
-        loadingId = "#loading",
-        container = ".content_body";
+        loading = "#loading",
+        contentbody = ".content_body";
 
     showMore.load = function() {
 
         var url = "./" + page + ".html";
 
         $(buttonId).hide();
-        $(loadingId).show();
+        $(loading).show();
 
         $.ajax({
             url: url,
             success: function(response) {
                 if (!response || response.trim() == "NONE") {
                     $(buttonId).fadeOut();
-                    $(loadingId).text("No more entries to load!");
+                    $(loading).text("No more entries to load!");
                     return;
                 }
                 appendContests(response);
             },
             error: function(response) {
-                $(loadingId).text("Sorry, there was some error with the request. Please refresh the page.");
+                $(loading).text("An error occurred with the request");
             }
         });
     };
@@ -36,9 +36,9 @@ var showMore = showMore || {};
         var id = $(buttonId);
 
         $(buttonId).show();
-        $(loadingId).hide();
+        $(loading).hide();
 
-        $(response).appendTo($(container));
+        $(response).appendTo($(contentbody));
         page += 1;
     };
 
