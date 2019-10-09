@@ -1,38 +1,45 @@
-var showMore = showMore || {};
+var lazyload = lazyload || {};
 
-(function($, showMore) {
+(function($, lazyload) {
+
+    "use strict";
+
     var page = 2,
-        btn_showMore = "#btn_showMore",
-        loading = "#loading",
-        content_body = ".content_body";
-    showMore.load = function() {
-        var url = "/" + page + ".html";
-        $(btn_showMore).hide();
-        $(loading).show();
+        buttonId = "#btn_showMore",
+        loadingId = "#loading-div",
+        container = ".content_body";
+
+    lazyload.load = function() {
+
+        var url = "./" + page + ".html";
+
+        $(buttonId).hide();
+        $(loadingId).show();
+
         $.ajax({
             url: url,
             success: function(response) {
                 if (!response || response.trim() == "NONE") {
-                    $(btn_showMore).fadeOut();
-                    $(loading).text("No more entries to load!");
+                    $(buttonId).fadeOut();
+                    $(loadingId).text("No more entries to load!");
                     return;
                 }
                 appendContests(response);
             },
             error: function(response) {
-                $(loading).text("An error occurred with the request");
+                $(loadingId).text("Sorry, there was some error with the request. Please refresh the page.");
             }
         });
     };
 
     var appendContests = function(response) {
-        var id = $(btn_showMore);
+        var id = $(buttonId);
 
-        $(btn_showMore).show();
-        $(loading).hide();
+        $(buttonId).show();
+        $(loadingId).hide();
 
-        $(response).appendTo($(content_body));
+        $(response).appendTo($(container));
         page += 1;
     };
 
-})(jQuery, showMore);
+})(jQuery, lazyload);
